@@ -1,0 +1,78 @@
+ul.contactsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  min-width: 320px;
+  height: auto;
+  border: 1px solid #e4e4e4;
+  margin: $headerHeight auto 0 auto;
+  overflow: hidden;
+  @media (max-width: 500px) {
+    margin-top: $smallHeaderHeight;
+  }
+  li {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #e4e4e4;
+    padding: 4px 8px;
+    background: #ffffff;
+    &:hover {
+      background: #e4e4e4;
+      .editBtn{
+        right: 0;
+      }
+    }
+    .avatar {
+      position: relative;
+      height: 100%;
+      width: 51px;
+      min-width: 51px;
+      max-width: 51px;
+      border-radius: 50%;
+      flex: 1;
+      pointer-events: none;
+    }
+    .description{
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-left: 10px;
+      flex: 7;
+      span {
+        color: grey;
+        font-size: .9em;
+        &.name {
+          color: #000000;
+          font-weight: bold;
+          font-size: 1em;
+        }
+      }
+    }
+    .editBtn {
+      position: relative;
+      right: -100px;
+      transition: 150ms linear right;
+      height: 100%;
+      width: 51px;
+      background: url("imgs/edit.svg") center center no-repeat;
+      background-size: 40%;
+      @media (max-width: 410px) {
+        background-size: 60%;
+      }
+      flex: 1;
+      &:active {
+        opacity: .5;
+      }
+    }
+  }
+}
